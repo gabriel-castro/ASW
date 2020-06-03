@@ -1,0 +1,45 @@
+package sonc.shared;
+
+import java.util.List;
+
+import sonc.shared.Movie.Oblong;
+import sonc.shared.Movie.Score;
+
+public class OldOblong {
+
+	public List<Oblong> getOblongs() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Object getSize() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Object getX() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Object getY() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public double getHeading() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	public Object getColor() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public List<Score> getScores() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

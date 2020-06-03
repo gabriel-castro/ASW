@@ -1,0 +1,144 @@
+package sonc.battle;
+
+import sonc.battle.MovingObjectTest.TestMovingObject;
+import sonc.quad.HasPoint;
+
+public abstract class MovingObject extends java.lang.Object implements HasPoint{
+
+	private double speed;
+	protected int status;
+	private double heading;
+	private double x;
+	private double y;
+	private double maxRotation;
+	private double maxSpeed;
+	private double maxSpeedChange;
+	private Ship origin;
+	
+
+	
+	MovingObject(int status, double heading, double speed) {
+		// TODO Auto-generated constructor stub
+		this.status = status;
+		this.heading=heading;
+		this.speed=speed;
+	}
+	
+	protected double distanceTo(MovingObject other) {
+		double d1 = Math.abs(this.x - other.x);
+		double d2 = Math.abs(this.y - other.y);
+//		System.out.println("this X:"  + this.x 	+ "|this Y:"  + this.y);
+//		System.out.println("other X:" + other.x + "|other Y:" + other.y);
+//		System.out.println("d1:" 	  + d1 		+ "|d2:"      + d2);
+		double result = Math.sqrt((d1*d1)+(d2*d2));
+		return result;
+	}
+
+	void doChangeSpeed(double delta) {
+		// TODO Auto-generated method stub
+		speed = speed + delta;
+	}
+	
+	void doRotate(double angle) {
+		// TODO Auto-generated method stub
+		heading = heading + angle;
+	}
+	
+	public abstract String getColor();
+
+	public double getHeading() {
+		return this.heading;
+	}
+	
+	protected double headingTo(MovingObject other) {
+		double ang = Math.atan2(other.y-this.y, other.x-this.x);
+		if(ang<0) ang += 2*Math.PI;
+		return ang;
+	}
+	
+	abstract int getImpactDamage();
+	
+	double getMaxRotation() {
+		// TODO Auto-generated method stub
+		return maxRotation;
+	}
+	
+	double getMaxSpeed() {
+		// TODO Auto-generated method stub
+		return maxSpeed;
+	}
+
+	double getMaxSpeedChange() {
+		// TODO Auto-generated method stub
+		return maxSpeedChange;
+	}
+
+	Ship getOrigin() {
+		// TODO Auto-generated method stub
+		return origin;
+	}
+	
+	public abstract int getSize();
+
+	public double getSpeed() {
+		// TODO Auto-generated method stub
+		return speed;
+	}
+
+	public int getStatus() {
+		// TODO Auto-generated method stub
+		return status;
+	}
+	
+	public double getX() {
+		// TODO Auto-generated method stub
+		return this.x;
+	}
+
+	public double getY() {
+		// TODO Auto-generated method stub
+		return this.y;
+	}
+	
+	void hitdBy(TestMovingObject other) {
+		System.out.println("hitdBy success");
+//		System.out.println(this.toString() + " " + this.status);
+//		System.out.println(other.toString() + " " + other.status);
+		this.status -= other.getStatus();
+		
+	}
+
+	public boolean isDestroyed() {
+//		System.out.println("isDestroyed");
+//		System.out.println(this.toString() + " " + this.status);
+		if(this.status == 0) {
+			return true;
+		}
+		return false;
+	}
+
+	protected double normalizeAngle(double heading) {
+		if(heading<0) heading += 2*Math.PI;
+		if(heading>=2*Math.PI) heading -= 2*Math.PI;
+		return heading;
+	}
+
+	void setHeading(double heading) {
+		this.heading = heading;
+	}
+
+	void setX(double x) {
+		this.x = x;
+	}
+
+	void setY(double y) {
+		this.y = y;
+	}
+	
+	void updatePosition() {
+		// TODO Auto-generated method stub
+		this.x = speed * Math.cos(heading);
+		this.y = speed * Math.sin(heading);
+	}
+	
+}

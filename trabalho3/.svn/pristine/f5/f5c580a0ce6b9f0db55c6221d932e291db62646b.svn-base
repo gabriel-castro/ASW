@@ -1,0 +1,22 @@
+package sonc.client;
+
+
+import com.google.gwt.core.client.EntryPoint;
+import com.google.gwt.user.client.ui.Panel;
+import com.google.gwt.user.client.ui.RootPanel;
+
+import sonc.client.GUI.ExecArea;
+import sonc.client.GUI.LoginArea;
+
+
+public class WebManager implements EntryPoint{
+	@Override
+	public void onModuleLoad() {
+		Panel rootLevel = RootPanel.get("celula");
+		LoginArea loginArea = new LoginArea();
+		rootLevel.add(loginArea);
+		//ExecArea execArea = new ExecArea();
+		//rootLevel.add(execArea);
+		
+	}
+}

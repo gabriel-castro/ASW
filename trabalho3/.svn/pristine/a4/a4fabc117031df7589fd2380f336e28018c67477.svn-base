@@ -1,0 +1,18 @@
+package sonc.client;
+
+
+import com.google.gwt.core.client.EntryPoint;
+import com.google.gwt.core.client.GWT;
+
+import sonc.client.GUI.LoginArea;
+
+
+public class WebManager implements EntryPoint{
+	private final ManagerServiceAsync managerService = GWT.create(ManagerService.class);
+
+	@Override
+	public void onModuleLoad() {
+		LoginArea loginArea = new LoginArea();
+		
+	}
+}

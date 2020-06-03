@@ -1,0 +1,64 @@
+package sonc.battle;
+
+public class GuidedMissile extends Munition{
+	double heading;
+	MovingObject target;
+	
+	GuidedMissile(double heading, MovingObject target) {
+		// TODO Auto-generated constructor stub
+		this.heading = heading;
+		this.target = target;
+	}
+	
+	
+
+	static void setMaxMissileRotation(double maxRotation) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	static void setDamage(int damage) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	static void setInitialSpeed(int speed) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	static int getDamage() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	void move() {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+
+	@Override
+	int fireDelay() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+
+
+	@Override
+	String getColor() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+
+	@Override
+	int getSize() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

@@ -1,0 +1,37 @@
+package sonc.client;
+
+import java.io.File;
+import java.util.List;
+
+import com.google.gwt.user.client.rpc.AsyncCallback;
+
+import sonc.shared.Movie;
+
+/**
+ * Interface Assincrona criada automaticamente pelo eclipse
+ */
+
+
+public interface ManagerServiceAsync {
+
+	void authenticate(String nick, String password, AsyncCallback<Boolean> callback);
+
+	void battle(List<String> nicks, AsyncCallback<Movie> callback);
+
+	void buildShip(String nick, String password, String code, AsyncCallback<Void> callback);
+
+	void getCurrentCode(String nick, String password, AsyncCallback<String> callback);
+
+	void getPlayersFile(AsyncCallback<File> callback);
+
+	void getPlayersNamesWithShips(AsyncCallback<List<String>> callback);
+
+	void register(String userId, String password, AsyncCallback<Boolean> callback);
+
+	void reset(AsyncCallback<Void> callback);
+
+	void setPlayersFile(File managerFile, AsyncCallback<Void> callback);
+
+	void updatePassword(String nick, String oldPassword, String newPassword, AsyncCallback<Boolean> callback);
+
+}

@@ -1,0 +1,56 @@
+package sonc.game;
+
+import sonc.battle.Ship;
+
+public class Player extends java.lang.Object implements java.io.Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private Ship instanceShip;
+	private String password;
+	private String nick;
+	private String code;
+
+	public Player() {		
+	}
+	
+	public Player(String string, String string2) {
+		// TODO Auto-generated constructor stub
+	}
+
+	boolean	authenticate(java.lang.String password) {
+		return false;		
+	}
+	
+	void	checkCode() {		
+	}
+	
+	java.lang.String	getCode(){
+		return code;		
+	}
+	
+	java.lang.String	getNick() {
+		return nick;		
+	}
+	
+	java.lang.String	getPassword() {
+		return password;		
+	}
+	
+	Ship	instanceShip() {
+		return instanceShip;		
+	}
+	
+	void	setCode(java.lang.String code) {
+		this.code = code;
+	}
+	
+	void	setNick(java.lang.String nick) {
+		this.nick = nick;
+	}
+	
+	void	setPassword(java.lang.String password) {
+		this.password = password;
+	}
+}

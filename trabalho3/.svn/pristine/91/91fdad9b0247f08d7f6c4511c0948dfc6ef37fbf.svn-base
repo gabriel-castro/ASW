@@ -1,0 +1,85 @@
+<!doctype html>
+<!-- The DOCTYPE declaration above will set the     -->
+<!-- browser's rendering engine into                -->
+<!-- "Standards Mode". Replacing this declaration   -->
+<!-- with a "Quirks Mode" doctype is not supported. -->
+
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+    <!--                                                               -->
+    <!-- Consider inlining CSS to reduce the number of requested files -->
+    <!--                                                               -->
+    <link type="text/css" rel="stylesheet" href="Trabalho3.css">
+
+    <!--                                           -->
+    <!-- Any title is fine                         -->
+    <!--                                           -->
+    <title>Web Application Starter Project</title>
+    
+    <!--                                           -->
+    <!-- This script loads your compiled module.   -->
+    <!-- If you add any GWT meta tags, they must   -->
+    <!-- be added before this line.                -->
+    <!--                                           -->
+    <script type="text/javascript" language="javascript" src="trabalho3/trabalho3.nocache.js"></script>
+  </head>
+
+  <!--                                           -->
+  <!-- The body can have arbitrary html, or      -->
+  <!-- you can leave the body empty if you want  -->
+  <!-- to create a completely dynamic UI.        -->
+  <!--                                           -->
+  <body>
+
+    <!-- RECOMMENDED if your web app will not function without JavaScript enabled -->
+    <noscript>
+      <div style="width: 22em; position: absolute; left: 50%; margin-left: -11em; color: red; background-color: white; border: 1px solid red; padding: 4px; font-family: sans-serif">
+        Your web browser must have JavaScript enabled
+        in order for this application to display correctly.
+      </div>
+    </noscript>
+
+    <h1>Trabalho 3: The one and only</h1>
+    <div class="login">
+		<form action="/action_page.php">
+		USER: <input type="text" name="user" value=""><br>
+		PASSWORD: <input type="text" name="pw" value=""><br>
+		<input type="submit" value="Submit" onClick="">
+		</form>
+	</div> 
+	<div class="codigo">
+		<form action="/action_page.php">
+		Editor de código: <br>
+		<textarea name="Text1" cols="60" rows="10"></textarea><br>
+		<input type="submit" value="Submit" onClick="">
+		</form>
+	</div>
+	<div class="movie">
+		<form action="/action_page.php">
+		Movie: <br>
+		<canvas id="myCanvas" width="1000" height="200" style="border:1px solid #000000;">
+		<script>
+			var c = document.getElementById("myCanvas");
+			var ctx = c.getContext("2d");
+			ctx.beginPath();
+			ctx.arc(95, 50, 40, 20, 2 * Math.PI);
+			ctx.stroke();
+			</script>
+		</canvas>
+		</form>
+	</div>
+	
+	
+	<div class="execucao">
+		<form action="/action_page.php">
+		Execução: <br>
+		<textarea name="Text1" cols="60" rows="10"></textarea><br>
+		<input type="submit" value="Submit" onClick="">
+		</form>
+	</div>
+	
+  </body>
+</html>
+

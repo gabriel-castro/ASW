@@ -1,0 +1,21 @@
+package sonc.client.GUI;
+
+import com.google.gwt.user.client.ui.Button;
+import com.google.gwt.user.client.ui.Composite;
+import com.google.gwt.user.client.ui.HorizontalPanel;
+
+public class ButtonArea extends Composite{
+	HorizontalPanel menu = new HorizontalPanel();
+	Button execButton = new Button("Execute Area");
+	Button movieButton = new Button("Movie Area");
+	Button codeButton = new Button("Coding Area");
+	
+	public ButtonArea() {
+		menu.add(codeButton);
+		menu.add(execButton);
+		menu.add(movieButton);
+		initWidget(menu);
+	}
+	
+	
+}

@@ -1,0 +1,67 @@
+package sonc.game;
+
+import java.io.File;
+import java.util.List;
+
+import sonc.shared.Movie;
+
+public class Manager extends java.lang.Object implements java.io.Serializable{
+	private static File playersFile;
+	private static Manager instance;
+	Players	allPlayers;
+	private List<String> playersNamesWithShips;
+	private String currentCode;
+	
+	boolean	authenticate(java.lang.String nick, java.lang.String password) {
+		return false;
+		
+	}
+	
+	Movie	battle(java.util.List<java.lang.String> nicks) {
+		return null;
+		
+	}
+	
+	void	buildShip(java.lang.String nick, java.lang.String password, java.lang.String code) {
+		
+	}
+	
+	java.lang.String	getCurrentCode(java.lang.String nick, java.lang.String password){
+		return currentCode;
+		
+	}
+	
+	static Manager	getInstance() {
+		return instance;
+		
+	}
+	
+	static java.io.File	getPlayersFile(){
+		return playersFile;
+		
+	}
+	
+	java.util.List<java.lang.String>	getPlayersNamesWithShips(){
+		return playersNamesWithShips;
+		
+	}
+	
+	boolean	register(java.lang.String userId, java.lang.String password) {
+		return false;
+		
+	}
+	
+	void	reset() {
+		
+	}
+	
+	static void	setPlayersFile(java.io.File managerFile) {
+		playersFile = managerFile;
+	}
+	
+	boolean	updatePassword(java.lang.String nick, java.lang.String oldPassword, java.lang.String newPassword) {
+		return false;
+		
+	}
+}
+

@@ -1,0 +1,24 @@
+package sonc.shared;
+
+public class SoncException extends java.lang.Exception{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	public SoncException() {
+		
+	}
+	public SoncException(java.lang.String message, java.lang.Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
+		
+	}
+	
+	public SoncException(java.lang.String message, java.lang.Throwable cause) {
+		
+	}
+	public SoncException(java.lang.String message) {
+		
+	}
+	public SoncException(java.lang.Throwable cause) {
+		
+	}
+}

@@ -1,0 +1,5 @@
+package sonc.game;
+
+public interface ManagerInterface {
+
+}

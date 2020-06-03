@@ -1,0 +1,35 @@
+package sonc.game;
+
+import java.util.List;
+
+public class Players extends java.lang.Object implements java.io.Serializable {
+	private Player player;
+	private List<String> playersNamesWithShips;
+
+	public Players() {
+		
+	}
+	boolean	authenticate(java.lang.String nick, java.lang.String password) {
+		return false;
+		
+	}
+	
+	Player	getPlayer(java.lang.String name) {
+		return player;
+	}
+	
+	java.util.List<java.lang.String>	getPlayersNamesWithShips(){
+		return playersNamesWithShips;
+		
+	}
+	
+	boolean	register(java.lang.String nick, java.lang.String password) {
+		return false;
+		
+	}
+	
+	boolean	updatePassword(java.lang.String nick, java.lang.String oldPassword, java.lang.String newPassword) {
+		return false;
+		
+	}
+}

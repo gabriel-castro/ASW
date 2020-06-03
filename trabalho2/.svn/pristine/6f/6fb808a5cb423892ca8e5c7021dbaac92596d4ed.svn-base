@@ -1,0 +1,105 @@
+package sonc.shared;
+
+import java.util.List;
+
+public class Movie extends java.lang.Object{
+	public static class Frame extends java.lang.Object {
+		private List<Oblong> oblongs;
+		private List<Score> scores;
+
+		public Frame(){
+			
+		}
+		
+		public java.util.List<Movie.Oblong>	getOblongs(){
+			return oblongs;
+		}
+		
+		public java.util.List<Movie.Score>	getScores(){
+			return scores;
+		}
+	}
+	
+	public static class Oblong extends java.lang.Object{
+		java.lang.String	color ;
+		float	heading ;
+		int	size ;
+		int	x ;
+		int	y ;
+		
+		public Oblong(int x, int y, float heading, int size, java.lang.String color) {
+			
+		}
+		
+		public java.lang.String getColor(){
+			return color;			
+		}
+		
+		public float getHeading() {
+			return heading;			
+		}
+		
+		public int	getSize() {
+			return size;			
+		}
+		
+		public int	getX() {
+			return x;			
+		}
+		
+		public int	getY() {
+			return y;			
+		}
+	}
+	
+	public static class Score extends java.lang.Object{
+		private String name;
+		private int points;
+		private int status;
+
+		public Score(java.lang.String name, int points, int status){
+			
+		}
+		
+		public java.lang.String	getName(){
+			return name;			
+		}
+		
+		public int	getPoints() {
+			return points;			
+		}
+		
+		public int	getStatus() {
+			return status;			
+		}
+
+	}
+
+	private List<Frame> frames;
+	public Movie(){}
+	
+	public void	addOblong(int x, int y, float heading, int size, java.lang.String color) {
+		try{
+			
+		}catch(java.lang.IllegalStateException e) {
+			System.out.println(e);
+		}
+	}
+	
+	public void	addScore(java.lang.String name, int points, int status) {
+		try{
+			
+		}catch(java.lang.IllegalStateException e) {
+			System.out.println(e);
+		}
+	}
+	
+	public java.util.List<Movie.Frame>	getFrames(){
+		return frames;
+		
+	}
+	
+	void	newFrame() {
+		
+	}
+}

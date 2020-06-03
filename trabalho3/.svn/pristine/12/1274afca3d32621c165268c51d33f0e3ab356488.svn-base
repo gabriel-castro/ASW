@@ -1,0 +1,82 @@
+package sonc.client.GUI;
+
+import com.google.gwt.canvas.client.Canvas;
+import com.google.gwt.canvas.dom.client.Context2d;
+import com.google.gwt.canvas.dom.client.CssColor;
+import com.google.gwt.core.client.GWT;
+import com.google.gwt.user.client.Random;
+import com.google.gwt.user.client.Timer;
+import com.google.gwt.user.client.ui.Composite;
+import com.google.gwt.user.client.ui.Label;
+import com.google.gwt.user.client.ui.RootPanel;
+import com.google.gwt.user.client.ui.VerticalPanel;
+
+import sonc.client.ManagerService;
+import sonc.client.ManagerServiceAsync;
+
+public class MovieArea extends Composite{
+	private final ManagerServiceAsync managerService = GWT.create(ManagerService.class);
+	VerticalPanel moviePanel = new VerticalPanel();
+	Canvas canvas = Canvas.createIfSupported();;
+	Context2d context;
+	static final int canvasHeight = 300;
+	static final int canvasWidth = 300;
+	static final String divTagId = "canvasExample"; // must match div tag in html file
+
+	//private Label MovieLabel = new Label();   
+
+	public MovieArea(){
+	
+		moviePanel.add(canvas);
+		initWidget(moviePanel);
+	}
+	
+	
+	
+	/*
+	if (canvas == null) {
+		RootPanel.get().add(new Label("Sorry, your browser doesn't support the HTML5 Canvas element"));
+		return;
+	}
+
+	canvas.setStyleName("mainCanvas");     // *** must match the div tag in CanvasExample.html ***
+	canvas.setWidth(canvasWidth + "px");
+	canvas.setCoordinateSpaceWidth(canvasWidth);
+
+	canvas.setHeight(canvasHeight + "px");      
+	canvas.setCoordinateSpaceHeight(canvasHeight);
+
+	RootPanel.get( divTagId ).add(canvas);
+	context = canvas.getContext2d();
+
+	final Timer timer = new Timer() {           
+		@Override
+		public void run() {
+			drawSomethingNew();
+		}
+	};
+	timer.scheduleRepeating(1500);
+	
+	public void drawSomethingNew() {
+        
+        // Get random coordinates and sizing
+        int rndX = Random.nextInt(canvasWidth);
+        int rndY = Random.nextInt(canvasHeight);        
+        int rndWidth = Random.nextInt(canvasWidth);
+        int rndHeight = Random.nextInt(canvasHeight);
+         
+        // Get a random color and alpha transparency
+        int rndRedColor = Random.nextInt(255);
+        int rndGreenColor = Random.nextInt(255);
+        int rndBlueColor = Random.nextInt(255);
+        double rndAlpha = Random.nextDouble();
+
+        CssColor randomColor = CssColor.make("rgba(" + rndRedColor + ", " 
+                                             + rndGreenColor + "," + rndBlueColor + ", " + rndAlpha + ")");
+         
+        context.setFillStyle(randomColor);
+        context.fillRect( rndX, rndY, rndWidth, rndHeight);
+        context.fill();
+    }
+	*/
+}

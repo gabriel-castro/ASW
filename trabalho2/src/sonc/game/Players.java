@@ -1,0 +1,63 @@
+package sonc.game;
+
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+
+public class Players extends java.lang.Object implements java.io.Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private java.util.Set<Player> players = new HashSet<Player>();
+	
+	public Players() {
+		
+	}
+	
+	boolean	authenticate(java.lang.String nick, java.lang.String password) {
+		for(Player jog : players) {
+			if(jog.getNick().equals(nick) & jog.getPassword().equals(password)) return true;
+		}
+		return false;
+	}
+	
+	Player	getPlayer(java.lang.String name) {
+		for(Player jog : players) {
+			if(jog.getNick().equals(name)) return jog;
+		}
+		return null;
+	}
+	
+	java.util.List<java.lang.String>	getPlayersNamesWithShips(){
+		List<String> pnws= new ArrayList<String>();
+		for(Player jog : players) {
+			if(jog.getCode() != null) {
+				pnws.add(jog.getNick());
+			}
+		}
+		return pnws;		
+	}
+	
+	boolean	register(java.lang.String nick, java.lang.String password) {
+		try {
+			Player aux = new Player(nick, password);
+			players.add(aux);
+		}catch(Exception e) {
+			return false;
+		}
+		return true;
+	}
+
+		
+	
+	boolean	updatePassword(java.lang.String nick, java.lang.String oldPassword, java.lang.String newPassword) {
+		for(Player jog : players) {
+			if(jog.getNick().equals(nick) & jog.getPassword().equals(oldPassword)) {
+				jog.setPassword(newPassword);
+				return true;
+			}
+		}
+		return false;		
+	}
+}

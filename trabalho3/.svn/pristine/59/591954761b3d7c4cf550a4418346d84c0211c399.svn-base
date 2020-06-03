@@ -1,0 +1,46 @@
+package sonc.client.GUI;
+
+import com.google.gwt.core.client.GWT;
+import com.google.gwt.event.dom.client.ClickEvent;
+import com.google.gwt.event.dom.client.ClickHandler;
+import com.google.gwt.user.client.Window;
+import com.google.gwt.user.client.rpc.AsyncCallback;
+import com.google.gwt.user.client.ui.Button;
+import com.google.gwt.user.client.ui.Composite;
+import com.google.gwt.user.client.ui.Label;
+import com.google.gwt.user.client.ui.TextArea;
+import com.google.gwt.user.client.ui.VerticalPanel;
+
+import sonc.client.ManagerService;
+import sonc.client.ManagerServiceAsync;
+
+public class CodeArea extends Composite{
+	private final ManagerServiceAsync managerService = GWT.create(ManagerService.class);
+	VerticalPanel painelCodigo = new VerticalPanel();
+	private Label codeLabel = new Label();   
+	private TextArea code = new TextArea();
+
+	public CodeArea() {		  
+		codeLabel.setText("Coding Area: ");
+		code.setPixelSize(1000, 450);
+		painelCodigo.add(codeLabel);
+		painelCodigo.add(code);
+		painelCodigo.add(codeButton);
+		initWidget(painelCodigo);
+	}
+
+	Button codeButton = new Button("Get Code",new ClickHandler() {
+		public void onClick(ClickEvent event) {
+			managerService.getCurrentCode(LoginArea.username.getText(), LoginArea.password.getText(), new AsyncCallback<String>(){
+				@Override
+				public void onFailure(Throwable caught) {
+					Window.alert(caught.toString());		
+				}
+				@Override
+				public void onSuccess(String result) {
+					code.setText(result);			
+				}						
+			});
+		}
+	});
+}

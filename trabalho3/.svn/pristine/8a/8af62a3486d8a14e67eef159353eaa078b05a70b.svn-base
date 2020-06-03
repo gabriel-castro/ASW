@@ -1,0 +1,44 @@
+package sonc.client.GUI;
+
+import com.google.gwt.core.client.GWT;
+import com.google.gwt.event.dom.client.ClickEvent;
+import com.google.gwt.event.dom.client.ClickHandler;
+import com.google.gwt.user.client.rpc.AsyncCallback;
+import com.google.gwt.user.client.ui.Button;
+import com.google.gwt.user.client.ui.Composite;
+import com.google.gwt.user.client.ui.HorizontalPanel;
+import com.google.gwt.user.client.ui.Label;
+import com.google.gwt.user.client.ui.TextBox;
+
+import sonc.client.ManagerService;
+import sonc.client.ManagerServiceAsync;
+
+public class CodeArea extends Composite{
+	private final ManagerServiceAsync managerService = GWT.create(ManagerService.class);
+	HorizontalPanel painelCodigo = new HorizontalPanel();
+	private Label codeLabel = new Label();   
+    private TextBox code = new TextBox();
+	
+	public CodeArea() {
+		codeLabel.setText("Código: ");
+		painelCodigo.add(codeLabel);
+		painelCodigo.add(code);
+		painelCodigo.add(codeButton);
+		initWidget(painelCodigo);
+	}
+	
+	Button codeButton = new Button("Get Code",new ClickHandler() {
+		public void onClick(ClickEvent event) {
+			managerService.getCurrentCode(LoginArea.username.getText(), LoginArea.password.getText(), new AsyncCallback<String>(){
+				@Override
+				public void onFailure(Throwable caught) {
+										
+				}
+				@Override
+				public void onSuccess(String result) {
+					code.setText(result);			
+				}						
+			});
+			}
+			});
+}

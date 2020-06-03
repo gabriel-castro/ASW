@@ -1,0 +1,14 @@
+package sonc.battle;
+
+public class RotateCommand {
+
+	public RotateCommand(Ship ship, double maxRotation) {
+		// TODO Auto-generated constructor stub
+	}
+
+	public void execute() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

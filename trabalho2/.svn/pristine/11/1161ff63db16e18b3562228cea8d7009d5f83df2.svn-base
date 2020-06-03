@@ -1,0 +1,142 @@
+package sonc.battle;
+
+import sonc.battle.MovingObjectTest.TestMovingObject;
+import sonc.quad.HasPoint;
+
+public abstract class MovingObject extends java.lang.Object implements HasPoint{
+
+	private double speed;
+	private int status;
+	private double heading;
+	private double x;
+	private double y;
+	private int impactDamage;
+	private double maxRotation;
+	private double maxSpeed;
+	private double maxSpeedChange;
+	private Ship origin;
+	
+
+	
+	MovingObject(int status, double heading, double speed) {
+		// TODO Auto-generated constructor stub
+		this.status = status;
+		this.heading=heading;
+		this.speed=speed;
+	}
+	
+	protected double distanceTo(MovingObject other) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	void doChangeSpeed(double delta) {
+		// TODO Auto-generated method stub
+		speed = speed + delta;
+	}
+	
+	void doRotate(double angle) {
+		// TODO Auto-generated method stub
+		heading = heading + angle;
+	}
+	
+	public abstract String getColor();
+
+	public double getHeading() {
+		return this.heading;
+	}
+	
+	int getImpactDamage() {
+		// TODO Auto-generated method stub
+		return impactDamage;
+	}
+	
+	double getMaxRotation() {
+		// TODO Auto-generated method stub
+		return maxRotation;
+	}
+	
+	double getMaxSpeed() {
+		// TODO Auto-generated method stub
+		return maxSpeed;
+	}
+
+	double getMaxSpeedChange() {
+		// TODO Auto-generated method stub
+		return maxSpeedChange;
+	}
+
+	Ship getOrigin() {
+		// TODO Auto-generated method stub
+		return origin;
+	}
+	
+	public abstract int getSize();
+
+	public double getSpeed() {
+		// TODO Auto-generated method stub
+		return speed;
+	}
+
+	public int getStatus() {
+		// TODO Auto-generated method stub
+		return status;
+	}
+	
+	public double getX() {
+		// TODO Auto-generated method stub
+		return this.x;
+	}
+
+	public double getY() {
+		// TODO Auto-generated method stub
+		return this.y;
+	}
+	
+	protected double headingTo(TestMovingObject other) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	
+	void hitdBy(TestMovingObject other) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public boolean isDestroyed() {
+		// TODO Auto-generated method stub
+		if(this.status==1) {
+			return false;
+		}
+		return true;
+	}
+
+	protected double normalizeAngle(double heading) {
+		// TODO Auto-generated method stub
+		return heading;
+	}
+
+	void setHeading(double heading) {
+		this.heading = heading;
+	}
+
+	void setX(double x) {
+		this.x = x;
+	}
+
+	void setY(double y) {
+		this.y = y;
+	}
+	
+	void updatePosition() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	protected double headingTo(MovingObject b1) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	
+	
+}

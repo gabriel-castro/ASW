@@ -1,0 +1,71 @@
+package sonc.battle;
+
+public class Bullet extends Munition{
+	public Bullet(double heading) {
+		super(10, heading, 20);
+	}
+
+
+	private String color = "";
+	private double maxRotation = Math.PI/4;
+	private double maxSpeed = 2;
+	private int size=1;
+	private static int impactDamage;
+	private double maxSpeedChange;
+	static double initialSpeed;
+	private static int fireDelay;
+	private static int damage=10;
+
+	
+	int fireDelay() {
+		return 0;
+	}
+	
+	public java.lang.String getColor(){
+		return color ;		
+	}
+	static int getDamage() {
+		return damage;
+	}
+	
+	static int getFireDelay() {
+		return fireDelay;
+	}	
+	
+	int getImpactDamage() {
+		return impactDamage;
+	}
+	
+	static double getInitialSpeed() {
+		return initialSpeed;		
+	}
+	
+	double getMaxRotation() {
+		return maxRotation;
+	}
+	
+	double getMaxSpeed() {
+		return maxSpeed;
+	}
+	
+	double getMaxSpeedChange() {
+		return maxSpeedChange;
+	}
+	
+	public int getSize() {
+		return size; 
+	}
+	
+	static void	setDamage(int NewDamage) {
+		damage = NewDamage;
+		impactDamage = NewDamage;
+	}
+
+	static void	setFireDelay(int NewFireDelay) {
+		fireDelay = NewFireDelay;
+	}
+
+	static void	setInitialSpeed(double speed) {
+		initialSpeed = speed;
+	}
+}

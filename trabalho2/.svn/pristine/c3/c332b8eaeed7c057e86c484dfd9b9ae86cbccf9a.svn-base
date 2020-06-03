@@ -1,0 +1,192 @@
+package sonc.battle;
+
+import java.lang.String;
+import java.util.HashSet;
+
+public class Ship extends MovingObject {
+
+	private static int damage;
+	private static double maxShipSpeedChange;
+	private static double maxShipRotation = Math.PI/4;
+	private World world;
+	private ShipCommand command;
+	private String name;
+	private int points;
+	private int lastFireRound;
+	private int impactDamage = 0;
+	private Ship origin;
+	private int size = 4;
+	private String color = "blue";
+	private static double heading;
+	private static double speed;
+	private static int maxStatus;
+	private double x;
+	//protected java.util.Set<Ship> otherShips = new HashSet<Ship>();
+	
+	public Ship() {
+		super(1000, heading, speed);
+		
+	}
+	
+	static double getMaxShipRotation() {
+		return maxShipRotation;
+	}
+
+	public void addPoints(int points) {
+		this.points += points; 
+	}
+	
+	protected void changeSpeed(double delta) {
+		speed = speed + delta;
+	}
+
+	protected boolean canFire(Munition munition) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+	
+	public void execute() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public static void setMaxShipRotation(double d) {
+		// TODO Auto-generated method stub
+		maxShipRotation = d;
+	}
+
+	public void setWorld(World world) {
+		// TODO Auto-generated method stub
+		this.world=world;
+	}
+
+	public void setX(double margin) {
+		// TODO Auto-generated method stub
+		x=margin;
+	}
+
+	public void setY(double margin) {
+	}
+
+	static void setDamage(int value) {
+		// TODO Auto-generated method stub
+		damage=value;
+	}
+
+	static int getDamage() {
+		return damage;
+	}
+
+	public int getImpactDamage() {
+		// TODO Auto-generated method stub
+		this.impactDamage = damage;
+		return this.impactDamage;
+	}
+
+	public Ship getOrigin() {
+		// TODO Auto-generated method stub
+		return origin;
+	}
+
+	public final int getSize() {
+		return size;
+	}
+
+	public String getColor() {
+		return color;
+	}
+
+	protected World getWorld() {
+		// TODO Auto-generated method stub
+		return world;
+	}
+
+	protected java.util.Set<Ship> getOtherShips() {
+		java.util.Set<Ship> barcos = new HashSet<Ship>();
+		java.util.Set<MovingObject> mundo = world.getMovingObjects();
+		
+		for(MovingObject obj : mundo) {
+			int idmg = obj.getImpactDamage();
+			if(idmg == 1000) {
+				//barcos.add(obj);
+			}
+		}
+		return barcos;
+	}
+
+	public void setHeading(double i) {
+		// TODO Auto-generated method stub
+		heading = i;
+	}
+
+	public double getX() {
+		// TODO Auto-generated method stub
+		return x;
+	}
+
+	public void fire(Bullet bullet) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	protected int getLastFireRound() {
+		// TODO Auto-generated method stub
+		return lastFireRound;
+	}
+
+	public void setLastFireRound(int value) {
+		// TODO Auto-generated method stub
+		lastFireRound=value;
+	}
+	
+	protected final void rotate(double delta) {
+		// TODO Auto-generated method stub
+		if(delta>maxShipRotation) {
+			heading = maxShipRotation;
+		}else {
+			heading = delta;	
+		}
+		
+	}
+
+	public int getPoints() {
+		return points;
+	}
+	
+	public double distanceTo(MovingObject other) {
+		return super.distanceTo(other);
+	}
+
+	public String getName() {
+		// TODO Auto-generated method stub
+		return name;
+	}
+	
+	protected void move() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public static void setMaxShipSpeedChange(double maxShipSpeedChange) {
+		// TODO Auto-generated method stub
+		Ship.maxShipSpeedChange = maxShipSpeedChange;
+	}
+	
+	static double getMaxShipSpeedChange() {
+		return maxShipSpeedChange;
+	}
+	
+	static int getMaxStatus() {
+		
+		return maxStatus;
+	}
+	
+	static void setMaxStatus(int status) {
+		maxStatus = status;
+	}
+	
+	
+	ShipCommand getCommand() {
+		return command;		
+	}
+}

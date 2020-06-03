@@ -1,0 +1,39 @@
+package sonc.quad;
+
+
+public class PointQuadtree<T extends HasPoint> extends java.lang.Object {
+	private java.util.Set<T> objects;
+	
+	public PointQuadtree(double topLeftX, double topLeftY, double bottomRightX, double bottomRightY) {
+		
+	}
+	
+	public void	delete(T point) {
+		objects.remove(point);
+	}
+	
+
+	
+	
+	public T	find(T point) {
+		return point;
+		
+	}
+	public java.util.Set<T>	findNear(double x, double y, double radius){
+		return null;		
+	}
+	
+	public java.util.Set<T>	getAll(){
+		return objects;		
+	}
+	
+	public void	insert(T point) {
+		objects.add(point);
+	}
+	
+	public void	insertReplace(T point) {
+		objects.remove(point);
+		objects.add(point);
+	}
+
+}

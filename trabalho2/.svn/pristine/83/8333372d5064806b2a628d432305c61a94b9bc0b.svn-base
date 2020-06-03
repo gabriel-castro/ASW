@@ -1,0 +1,97 @@
+package sonc.battle;
+
+import java.util.List;
+import java.util.Set;
+
+import sonc.shared.Movie;
+
+public class World {
+
+	private static double collisionDistance;
+	private static int rounds;
+	private static double width;
+	private static double height;
+	private static double margin;
+
+	private Set<Ship> ships;
+	private int currentRound;
+	private Set<MovingObject> movingObjects;
+
+	void addMovingObject(MovingObject added) {
+		// TODO Auto-generated method stub
+	}
+	
+	void addShipAt(Ship ship, double x, double y, double heading) {
+		
+	}
+	
+	void	addShipAtRandom(Ship ship) {
+		
+	}
+	
+	Movie battle(List<Ship> ships) {
+		//--start a battle with ships
+		return null;
+	}
+	
+	static double getCollisionDistance() {
+		return collisionDistance;		
+	}
+
+	int	getCurrentRound() {
+		return currentRound;		
+	}
+	
+	static double	getHeight() {
+		return height;		
+	}
+	
+	static double	getMargin() {
+		return margin;		
+	}
+	
+	Set<MovingObject>	getMovingObjects(){
+		return movingObjects;
+	}
+	
+	static int	getRounds() {
+		return rounds;		
+	}
+	
+	Set<Ship>	getShips(){
+		return ships;		
+	}
+	
+	static double	getWidth() {
+		return width;		
+	}
+	
+	static void	setCollisionDistance(double NewCollisionDistance) {
+		collisionDistance = NewCollisionDistance;
+	}
+	
+	void	setCurrentRound(int NewCurrentRound) {
+		currentRound = NewCurrentRound;
+	}
+	
+	static void	setHeight(double NewHeight) {
+		height = NewHeight;
+	}
+	
+	static void	setMargin(double NewMargin) {
+		margin = NewMargin;
+	}
+	
+	static void	setRounds(int NewRounds) {
+		rounds = NewRounds;
+	}
+	
+	static void	setWidth(double NewWidth) {
+		width = NewWidth;
+	}
+	
+	void	update() {
+		
+	}
+
+}

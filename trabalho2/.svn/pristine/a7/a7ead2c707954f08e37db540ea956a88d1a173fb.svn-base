@@ -1,0 +1,54 @@
+package sonc.quad;
+
+import java.util.ArrayList;
+import java.util.HashSet;
+
+public class PointQuadtree<T extends HasPoint> extends java.lang.Object {
+	private java.util.Set<T> objects = new HashSet<T>();
+	private PointQuadtree[] nodes;
+	private double topLeftX;
+	private double topLeftY;
+	private double bottomRightX;
+	private double bottomRightY;
+	
+	public PointQuadtree(double topLeftX, double topLeftY, double bottomRightX, double bottomRightY) {
+		this.topLeftX = topLeftX;
+		this.topLeftY = topLeftY;
+		this.bottomRightX = bottomRightX;
+		this.bottomRightY = bottomRightY;
+	}
+
+	public void	delete(T point) {
+		System.out.println("delete");
+		//objects.remove(point);
+		return;
+	}
+	
+	public T find(T point) {
+		System.out.println("find");
+		return null;
+		
+	}
+	public java.util.Set<T>	findNear(double x, double y, double radius){
+		System.out.println("findnear");
+		return null;		
+	}
+	
+	public java.util.Set<T>	getAll(){
+		System.out.println("getall");
+		return null;		
+	}
+	
+	public void	insert(T point) {
+		System.out.println("insert");
+		return;
+	}
+	
+	public void	insertReplace(T point) {
+		System.out.println("insert&replace");
+	//	objects.remove(point);
+		//objects.add(point);
+		return;
+	}
+
+}

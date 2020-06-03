@@ -1,0 +1,72 @@
+package sonc.client;
+
+
+import com.google.gwt.core.client.EntryPoint;
+import com.google.gwt.core.client.GWT;
+import com.google.gwt.event.dom.client.ClickEvent;
+import com.google.gwt.event.dom.client.ClickHandler;
+import com.google.gwt.user.client.rpc.AsyncCallback;
+import com.google.gwt.user.client.ui.Button;
+import com.google.gwt.user.client.ui.Label;
+
+
+public class WebManager implements EntryPoint{
+	private final ManagerServiceAsync managerService = GWT.create(ManagerService.class);
+
+	@Override
+	public void onModuleLoad() {
+		final Label messageLabel = new Label("");
+		// botao authenticate
+		Button autButton = new Button("Auhtenticate Button");
+		autButton.addClickHandler(new ClickHandler() {
+			public void onClick(ClickEvent event) {
+				managerService.authenticate(null, null, new AsyncCallback<Boolean>(){
+					@Override
+					public void onFailure(Throwable caught) {
+						messageLabel.setText(caught.getMessage());						
+					}
+					@Override
+					public void onSuccess(Boolean result) {
+						messageLabel.setText(result.toString());						
+					}						
+				});
+			}
+		});
+		
+		
+		// botao register
+		Button regButton = new Button("Register Button");
+		regButton.addClickHandler(new ClickHandler() {
+			public void onClick(ClickEvent event) {
+				managerService.register(null, null, new AsyncCallback<Boolean>(){
+					@Override
+					public void onFailure(Throwable caught) {
+						messageLabel.setText(caught.getMessage());						
+					}
+					@Override
+					public void onSuccess(Boolean result) {
+						messageLabel.setText(result.toString());						
+					}						
+				});
+			}
+		});
+		
+		
+		// botao authenticate
+		Button resButton = new Button("Reset Button");
+		resButton.addClickHandler(new ClickHandler() {
+			public void onClick(ClickEvent event) {
+				managerService.reset(new AsyncCallback<Void>(){
+					@Override
+					public void onFailure(Throwable caught) {
+						messageLabel.setText(caught.getMessage());						
+					}					
+					@Override
+					public void onSuccess(Void result) {
+						messageLabel.setText(result.toString());
+					}										
+				});
+			}
+		});
+	}
+}

@@ -1,0 +1,182 @@
+package sonc.battle;
+
+public class Ship extends MovingObject {
+
+	private static int damage;
+	private static double maxShipSpeedChange;
+	private static double maxShipRotation;
+	private World world;
+	private ShipCommand command;
+	private String name;
+	private int points;
+	private int lastFireRound;
+	private int impactDamage;
+	private Ship origin;
+	private int size;
+	private String color;
+	private static double heading;
+	private static double speed;
+	private double x;
+	
+	
+	
+	static double getMaxShipRotation() {
+		return maxShipRotation;
+	}
+
+
+
+	public Ship() {
+		super(1000, heading, speed);
+		// TODO Auto-generated constructor stub
+	}
+
+
+	
+	public void addPoints(int points) {
+		// TODO Auto-generated method stub		
+	}
+	
+	protected void changeSpeed(double delta) {
+		speed = speed + delta;
+	}
+
+	protected boolean canFire(Munition munition) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+	
+	public void execute() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public static void setMaxShipRotation(double d) {
+		// TODO Auto-generated method stub
+		maxShipRotation = d;
+	}
+
+	public void setWorld(World world) {
+		// TODO Auto-generated method stub
+		this.world=world;
+	}
+
+	public void setX(double margin) {
+		// TODO Auto-generated method stub
+		x=margin;
+	}
+
+	public void setY(double margin) {
+	}
+
+	static void setDamage(int value) {
+		// TODO Auto-generated method stub
+		damage=value;
+	}
+
+	static int getDamage() {
+		// TODO Auto-generated method stub
+		return damage;
+	}
+
+	public int getImpactDamage() {
+		// TODO Auto-generated method stub
+		return impactDamage;
+	}
+
+	public Ship getOrigin() {
+		// TODO Auto-generated method stub
+		return origin;
+	}
+
+	public int getSize() {
+		// TODO Auto-generated method stub
+		return size;
+	}
+
+	public String getColor() {
+		// TODO Auto-generated method stub
+		return color;
+	}
+
+	protected World getWorld() {
+		// TODO Auto-generated method stub
+		return world;
+	}
+
+	protected java.util.Set<Ship> getOtherShips() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public void setHeading(int i) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public double getX() {
+		// TODO Auto-generated method stub
+		return x;
+	}
+
+	public void fire(Bullet bullet) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	protected int getLastFireRound() {
+		// TODO Auto-generated method stub
+		return lastFireRound;
+	}
+
+	public void setLastFireRound(int value) {
+		// TODO Auto-generated method stub
+		lastFireRound=value;
+	}
+
+	public void rotate(double delta) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public int getPoints() {
+		// TODO Auto-generated method stub
+		return points;
+	}
+	
+	public double distanceTo(MovingObject other) {
+		return super.distanceTo(other);
+	}
+
+	public String getName() {
+		// TODO Auto-generated method stub
+		return name;
+	}
+	
+	protected void move() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public static void setMaxShipSpeedChange(double maxShipSpeedChange) {
+		// TODO Auto-generated method stub
+		Ship.maxShipSpeedChange = maxShipSpeedChange;
+	}
+	
+	static double getMaxShipSpeedChange() {
+		return maxShipSpeedChange;
+	}
+	
+	static int getMaxStatus() {
+		
+		return 0;
+	}
+	
+	static void setMaxStatus(int status) {
+	}
+	
+	
+	ShipCommand getCommand() {
+		return command;		
+	}
+}

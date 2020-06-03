@@ -1,0 +1,136 @@
+package sonc.battle;
+
+import sonc.battle.MovingObjectTest.TestMovingObject;
+import sonc.quad.HasPoint;
+
+public abstract class MovingObject extends java.lang.Object implements HasPoint{
+	int status;
+	double heading;
+	double speed;
+	double x;
+	double y;
+	
+	public MovingObject() {
+		// TODO Auto-generated constructor stub
+	
+	}
+	
+	public MovingObject(int status, double i, double j) {
+		// TODO Auto-generated constructor stub
+		this.status = status;
+		this.heading=i;
+		this.speed=j;
+	}
+	
+	protected double distanceTo(MovingObject other) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	void doChangeSpeed(double d) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	void doRotate(double angle) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	public abstract String getColor();
+
+	public double getHeading() {
+		return this.heading;
+	}
+	
+	int getImpactDamage() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	
+	double getMaxRotation() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	
+	double getMaxSpeed() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	double getMaxSpeedChange() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	Ship getOrigin() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	public abstract int getSize();
+
+	public double getSpeed() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	public int getStatus() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	
+	public double getX() {
+		// TODO Auto-generated method stub
+		return this.x;
+	}
+
+	public double getY() {
+		// TODO Auto-generated method stub
+		return this.y;
+	}
+	
+	protected double headingTo(TestMovingObject other) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	
+	void hitdBy(TestMovingObject other) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public boolean isDestroyed() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	protected double normalizeAngle(double heading) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	void setHeading(double heading) {
+		this.heading = heading;
+	}
+
+	void setX(double x) {
+		this.x = x;
+	}
+
+	void setY(double y) {
+		this.y = y;
+	}
+	
+	void updatePosition() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	protected double headingTo(MovingObject b1) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	
+	
+}

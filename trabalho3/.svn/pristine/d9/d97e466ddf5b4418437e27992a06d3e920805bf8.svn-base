@@ -1,0 +1,35 @@
+package sonc.client;
+
+
+import com.google.gwt.core.client.EntryPoint;
+import com.google.gwt.core.client.GWT;
+import com.google.gwt.event.dom.client.ClickEvent;
+import com.google.gwt.event.dom.client.ClickHandler;
+import com.google.gwt.user.client.rpc.AsyncCallback;
+import com.google.gwt.user.client.ui.Button;
+
+
+public class WebManager implements EntryPoint{
+	private final ManagerServiceAsync managerService = GWT.create(ManagerService.class);
+
+	@Override
+	public void onModuleLoad() {
+	   Button incrButton = new Button("incr Button");
+	   incrButton.addClickHandler(new ClickHandler() {
+		   public void onClick(ClickEvent event) {
+			   	managerService.authenticate(null, null, new AsyncCallback<Boolean>(){
+					@Override
+					public void onFailure(Throwable caught) {
+						// TODO Auto-generated method stub
+						
+					}
+					@Override
+					public void onSuccess(Boolean result) {
+						// TODO Auto-generated method stub
+						
+					}						
+		});
+	   }
+	 });
+	}
+}

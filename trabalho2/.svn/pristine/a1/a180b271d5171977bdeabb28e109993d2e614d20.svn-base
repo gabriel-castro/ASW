@@ -1,0 +1,20 @@
+package sonc.shared;
+
+public class OldScore {
+
+	public Object getName() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Object getPoints() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Object getStatus() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}
